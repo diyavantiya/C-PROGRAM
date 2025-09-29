@@ -13,7 +13,7 @@ printf("Now, printing all values of array a\n");
 printf("using pointer variable p\n");
 p=a;
 for(i=0; i<5; i++){
-printf("%d", *p);
+printf("%d\n", *p);
 p++;
 }
 return 0;
