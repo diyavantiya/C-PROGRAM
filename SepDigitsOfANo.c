@@ -2,15 +2,17 @@
 #include <stdio.h>
 
 int main() {
-    int n,digits;
+    int n,digits,orignum,i=0;
     printf("Enter no:");
     scanf("%d", &n);
     printf("The digits of %d are:", n);
-while(n>0)
-{
-         digits=n%10; // get last digit
+    orignum=n;
+    while(orignum>0) {
+        digits=orignum%10; // get last digit
         printf("%d ", digits);
-        n=n/10; // remove last digit
-}
+        orignum=orignum/10; // remove last digit
+        i++;
+    }
+    printf("The no of digits are %d", i);
     return 0;
 }
