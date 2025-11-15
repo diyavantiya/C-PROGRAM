@@ -1,4 +1,32 @@
-// Print minimum no. of notes required
+// Print minimum no. of notes required 
+//Way 1
+#include <stdio.h>
+
+int main() {
+    int a, digit;
+    int notes[] = {500, 200, 100, 50, 20, 10, 5, 2, 1};
+    int noOfnotes[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+    printf("Enter the amount:");
+    scanf("%d", &a);
+    digit=a;
+    for(int i=0; i<9;i++)
+    {
+        if(digit==0) break; //to make program faster as agad nu execute j nay kare
+        noOfnotes[i]=digit/notes[i];
+        digit=digit % notes[i];
+    }
+    for(int i=0; i<9;i++)
+    {
+        if( noOfnotes[i]>0)
+        printf("%d notes of %d\n", noOfnotes[i], notes[i]);
+    }
+    
+    return 0;
+}
+
+
+//way 2
+
 #include <stdio.h>
 
 int main() {
