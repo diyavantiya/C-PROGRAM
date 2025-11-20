@@ -1,0 +1,20 @@
+//To sort the string lexicographically
+#include <stdio.h>
+#include<string.h>
+int main() {
+    char str[100], a;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    
+    for(int i=0;str[i]!='\0';i++) {
+        for(int j=i+1;str[j]!='\0';j++) {
+            if(((str[i]>='a' && str[i]<='z')?str[i]-32:str[i])>((str[j]>='a' && str[j]<='z')?str[j]-32:str[j])){
+            a=str[i];
+            str[i]=str[j];
+            str[j]=a;
+            }
+        }
+    }
+    printf("%s", str);
+    return 0;
+}
