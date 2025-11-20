@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include<conio.h>
+void main()
+{
+  FILE *fpr=NULL;
+  char ch;
+// clrscr();
+  fpr=fopen("my1st.dat", "r");
+  ch=fgetc(fpr);
+  while(ch!=EOF) {
+      
+      printf("%c",ch);
+      ch=fgetc(fpr);
+  }
+  fclose(fpr);
+  printf("Your details are displayed from the file sucessfully");
+  getch();
+}
