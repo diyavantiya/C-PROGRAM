@@ -1,0 +1,53 @@
+/******************************************************************************
+
+  Accept a record consisting of Roll No. (number only), name, blood group, city from the user and store it in the file.
+The program should terminate when the user is not willing to enter more records. 
+Create a structure called student_data containing the following information only:
+Roll No., name, marks of physics, maths and Chemistry, and total.
+Create one instance from this structure. 
+Accept roll no., name, and marks of three subjects from the user and calculate the total.
+Display all the information.
+*******************************************************************************/
+
+// Part 1
+
+#include <stdio.h>
+
+struct student_data
+{
+    int roll no;
+    char name[50], BldGrp[5], city[50];
+}s;
+
+int main()
+{
+    FILE *fpw;
+    char choice;
+    fpw=fopen("file.txt","w");
+    
+    if(fpw==NULL)
+    printf("This file does not exist");
+    
+    do {
+        
+         printf("Enter roll no:");
+        scanf("%d", &s.roll);
+        getchar();
+        printf("Enter the name:");
+        scanf("%[^\n]", name);
+        printf("Enter the blood group:");
+        scanf("%[^\n]", BldGrp);
+        printf("Enter the city:");
+       scanf("%[^\n]", city);
+        fprintf(fpw, "%d\n%s\n%s\n%s\n", s.roll,s.name,s.BloodGrp,s.city);
+        printf("Do you want to continue?(y/n)");
+         scanf("%c", &choice);
+    } 
+    while(choice==y && choice=Y)
+    fclose(fpw);
+
+    return 0;
+}
+
+
+// Part2
