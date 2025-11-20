@@ -1,0 +1,17 @@
+//To copy the content of one string to another
+#include <stdio.h>
+#include<string.h>
+int main() {
+    char str[100], cpy[100];
+    int i=0;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    int l=strlen(str);
+    
+    printf("copied string:");
+    for(int i=0; i<l; i++) {
+        cpy[i]=str[i];
+        printf("%c", cpy[i]);
+    }
+    return 0;
+}
