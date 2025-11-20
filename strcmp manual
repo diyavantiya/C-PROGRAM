@@ -1,0 +1,25 @@
+//To compare two strings
+#include <stdio.h>
+#include<string.h>
+int main() {
+    char str1[100], str2[100];
+    int equal=1, i=0;
+    printf("Enter 1st string: ");
+    fgets(str1, sizeof(str1), stdin);
+    
+    printf("Enter 2nd string: ");
+    fgets(str2, sizeof(str2), stdin);
+    
+    while(str1[i]!='\0' || str2[i]!='\0') {
+        if(str1[i]!=str2[i]){
+           equal=0;
+           break;
+        }
+        i++;
+    }
+    if(equal==1)
+        printf("Both strings are equal.",str1,str2);
+    else
+        printf("Both strings are not equal.",str1,str2);
+    return 0;
+}
