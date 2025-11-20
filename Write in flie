@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include<conio.h>
+void main()
+{
+  FILE *fpw=NULL;
+  char ch;
+// clrscr();
+  printf("Write details that you want in file. put # at the end");
+  fpw=fopen("my1st.dat", "w");
+  ch=fgetc(stdin);
+  while(ch!='#') {
+      
+      fputc(ch,fpw);
+      ch=fgetc(stdin);
+  }
+  fclose(fpw);
+  printf("Your details are written inn the file sucessfully");
+  getch();
+}
