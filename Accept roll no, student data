@@ -15,7 +15,7 @@ Display all the information.
 
 struct student_data
 {
-    int roll no;
+    int roll;
     char name[50], BldGrp[5], city[50];
 }s;
 
@@ -34,16 +34,16 @@ int main()
         scanf("%d", &s.roll);
         getchar();
         printf("Enter the name:");
-        scanf("%[^\n]", name);
+        scanf("%[^\n]", s.name);
         printf("Enter the blood group:");
-        scanf("%[^\n]", BldGrp);
+        scanf("%[^\n]", s.BldGrp);
         printf("Enter the city:");
-       scanf("%[^\n]", city);
-        fprintf(fpw, "%d\n%s\n%s\n%s\n", s.roll,s.name,s.BloodGrp,s.city);
+       scanf("%[^\n]", s.city);
+        fprintf(fpw, "%d\n%s\n%s\n%s\n", s.roll,s.name,s.BldGrp,s.city);
         printf("Do you want to continue?(y/n)");
          scanf("%c", &choice);
     } 
-    while(choice==y && choice=Y)
+    while(choice=='y' && choice=='Y');
     fclose(fpw);
 
     return 0;
