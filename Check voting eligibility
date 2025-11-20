@@ -1,0 +1,19 @@
+// To check if they are eligible for voting or  not
+#include <stdio.h>
+
+int main() {
+   int age[10];
+   printf("Enter age of 10 people to check whether they are eligible for voting or not:");
+   for(int i=0;i<10;i++)
+   scanf("%d", &age[i]);
+   
+    for(int i=0;i<10;i++) {
+   if(age[i]>=18)
+   printf("Person %d (Age %d) is elgible for voting.\n",i+1, age[i]);
+   
+   else
+    printf("Person %d (Age %d) is not elgible for voting.\n",i+1, age[i]);
+   
+    }
+    return 0;
+}
