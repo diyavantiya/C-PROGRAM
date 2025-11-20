@@ -1,0 +1,46 @@
+/******************************************************************************
+
+Accept a string from the user. Sort the string lexicographically.
+And write the original string and the sorted string in a file with your roll no. as a file name.
+e.g. if a string is Gandhinagar, after sorting it would be aaadgghinnr. Ignore the case.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+void main()
+{
+    char str[100], c,ostr[100];
+    printf("Enter the string to sort it lexicographically: ");
+    fgets(str, sizeof(str), stdin);
+    strcpy(ostr,str);
+    for(int i=0; str[i]!='\0';i++) {
+        for(int j=i+1; str[j]!='\0';j++) {
+            if(((str[i]>='a' && str[i]<='z')?str[i]-32:str[i])>((str[j]>='a' && str[j]<='z')?str[j]-32:str[j])) {
+            c=str[i];
+            str[i]=str[j];
+            str[j]=c;
+            }
+            
+        }
+    }
+    char os[]="Original String:", ss[]="Sorted String:";
+    
+  FILE *fpw=NULL;
+  char ch;
+// clrscr();
+  fpw=fopen("25BCP048.dat","w");
+   if(fpw==NULL){
+  printf("I cannot find the file which you want to write");
+  getch();
+  exit(0);
+  }
+fprintf(fpw, "Original String: %s\n", ostr);
+fprintf(fpw, "Sorted String: %s", str);
+
+  fclose(fpw);
+  printf("Your details are written in the file sucessfully");
+  getch();
+}
