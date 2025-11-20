@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void main()
+{
+  FILE *fpr=NULL, *fpw=NULL;
+  char ch;
+// clrscr();
+  fpr=fopen("my1st.dat", "r");
+  fpw=fopen("my2nd.dat","w");
+  if(fpr==NULL){
+  printf("I cannot find the file which you want to read.");
+  getch();
+  exit(0);
+  }
+   if(fpw==NULL){
+  printf("I cannot find the file which you want to write");
+  getch();
+  exit(0);
+  }
+  ch=fgetc(fpr);
+  while(ch!=EOF) {
+      
+      fputc(ch, fpw);
+      ch=fgetc(fpr);
+  }
+  fclose(fpr);
+  fclose(fpw);
+  printf("Your details are written from the file sucessfully");
+  getch();
+}
