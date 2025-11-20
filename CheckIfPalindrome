@@ -1,6 +1,30 @@
 // Check whether a given no. is a palindrome or not. e.g. 12321. 
+
+//2 way
+
 #include <stdio.h>
 
+int main()
+{
+  int num, orignum, rev;
+  printf("Enter a no to  be checked for palindrome:");
+  scanf("%d", &num);
+  orignum=num;
+  while(num!=0) {
+      int digit=num%10;
+      rev=(rev*10)+digit;
+      num=num/10;
+  }
+       if(rev==orignum)
+        printf("The no is palindrome\n");
+    else
+        printf("The no is not palindrome\n");
+  
+    return 0;
+}
+
+//! way
+#include <stdio.h>
 int main() {
     int a,digit, rem, b[100], isPalindrome = 1, i=0;
     printf("Enter no:");
