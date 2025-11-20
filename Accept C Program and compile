@@ -1,0 +1,32 @@
+/******************************************************************************
+Accept a C program through the keyboard and write it in a file.
+Consider the $ sign as the end of input. Compile that C program as well.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<conio.h>
+int main()
+{
+  FILE *fpw=NULL;
+  char ch;
+// clrscr();
+printf("Write your C program:\n");
+  fpw=fopen("25BCP048.c","w");
+   if(fpw==NULL){
+  printf("I cannot find the file which you want to write.");
+  getch();
+  return 0;
+  }
+ch=fgetc(stdin);
+while(ch!='$') {
+    fputc(ch,fpw);
+    ch=fgetc(stdin);
+}
+
+
+  fclose(fpw);
+  printf("Your program is written sucessfully");
+  
+ return 0;
+}
